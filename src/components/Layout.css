@@ -1,0 +1,31 @@
+/* Global layout wrapper */
+.layout-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: #0d1b2a;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Keep footer at the bottom */
+.app-footer {
+  margin-top: auto;
+  padding: 1rem 0;
+  text-align: center;
+  color: #ccc;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+  .layout-container {
+    padding: 0.75rem;
+  }
+}
+
+

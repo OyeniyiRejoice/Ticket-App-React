@@ -1,0 +1,209 @@
+.dashboard {
+  padding: 2rem;
+  color: #fff;
+  background: #0d1b2a;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* User info: greeting and email */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem; /* space between welcome and email on wide screens */
+  min-width: 160px;
+}
+
+.user-greeting {
+  color: #cfe8ff;
+  font-weight: 500;
+  
+}
+
+.user-email {
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* On narrow screens, stack greeting and email so email moves to next line */
+@media (max-width: 520px) {
+  .user-info {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .user-email {
+    white-space: normal;
+  }
+}
+
+.btn-logout {
+  background: #e63946;
+  border: none;
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #d62828;
+}
+
+.stats-section {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  flex: 1;
+  min-width: 200px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.stat-card.open {
+  border-top: 4px solid #38b000; /* green tone for open */
+}
+.stat-card.in_progress {
+  border-top: 4px solid #ffba08; /* amber tone */
+}
+.stat-card.closed {
+  border-top: 4px solid #9e9e9e; /* gray tone */
+}
+
+.ticket-list {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+.ticket-form input,
+.ticket-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.ticket-items {
+  list-style: none;
+  padding: 0;
+}
+
+.ticket {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.ticket.open {
+  border-left: 4px solid #38b000; /* green tone */
+}
+
+.ticket.in_progress {
+  border-left: 4px solid #ffba08; /* amber tone */
+}
+
+.ticket.closed {
+  border-left: 4px solid #9e9e9e; /* gray tone */
+}
+
+/* (open style defined above) */
+
+.filter-section {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Delete button for tickets */
+.btn-delete {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  margin-left: 0.6rem;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: #d62828;
+}
+
+.ticket-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+/* Modal styles for Edit form */
+.modal-backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal {
+  background: #0f1724;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 560px;
+  color: #fff;
+}
+.modal .edit-form label { display:block; margin-top:0.6rem; color:#cfe8ff; }
+.modal .edit-form input, .modal .edit-form textarea, .modal .edit-form select {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top:0.25rem;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+.modal-actions { display:flex; justify-content:flex-end; gap:0.5rem; margin-top:0.8rem; }
+.btn-outline { background: transparent; color: #cfe8ff; border:1px solid #cfe8ff; padding:0.4rem 0.6rem; border-radius:6px; }
+.btn-primary { background:#00b4d8; color:#052028; border:none; padding:0.4rem 0.6rem; border-radius:6px; }
+.error-text { color:#ffb4b4; }
+
